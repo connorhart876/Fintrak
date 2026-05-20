@@ -10,7 +10,17 @@
       "Bash(Get-ChildItem -Force)",
       "Bash(Select-Object Name, Attributes)",
       "Bash(npx create-next-app@latest . --typescript --eslint --tailwind --no-src-dir --app --turbopack --import-alias \"@/*\" --no-git)",
-      "Bash(claude mcp *)"
+      "Bash(claude mcp *)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\scrub\\\\OneDrive\\\\Desktop\\\\finance-tracker\" -Force)",
+      "Bash(Format-Table -Property Name, PSIsContainer)",
+      "Bash(gh auth *)",
+      "Bash(gh repo *)",
+      "Bash(gh issue *)",
+      "Bash(git checkout *)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(gh pr create --title '[Chore] Install MVP dependencies' --body ' *)",
+      "Bash(git stash *)"
     ]
   }
 }

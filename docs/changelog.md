@@ -10,6 +10,11 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Scaffolded 18 GitHub issues covering the full MVP milestone in dependency order
+- Installed MVP npm dependencies: `@supabase/supabase-js`, `@supabase/ssr`, `@prisma/client`, `prisma`, `zod`, `react-hook-form`, `@hookform/resolvers`
+- Added `prisma:seed` npm script and `prisma.seed` config block to `package.json`
+- Added Claude Code custom commands: `changelog`, `end-session`, `test-frontend`
+- Locked Claude Code MCP permission for `claude mcp` commands in project settings
 
 ### Changed
 

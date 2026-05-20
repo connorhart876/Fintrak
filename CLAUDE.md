@@ -28,7 +28,13 @@ Single Next.js 15 monorepo — frontend and API logic co-located. Supabase handl
 - **Theme:** Dark mode only — default and only theme
 - **Aesthetic:** Notion-style (clean, minimal, spacious) + YNAB-style functionality (category-driven, structured)
 - **Components:** shadcn/ui as the base; customize with Tailwind — avoid custom CSS overrides
-- **Typography:** _TBD — decide when scaffolding_
+- **Typography:** Font: Geist Sans (default from Next.js 15 scaffold) — keep it
+  Font scale: Tailwind defaults (text-sm, text-base, text-lg, etc.) — no custom scale
+  Numeric data (amounts, dates): `font-mono` (Geist Mono) for alignment in tables and transaction lists
+  Font weight conventions:
+    Page headers: font-semibold
+    Labels / secondary text: font-normal text-muted-foreground
+    Amounts: font-medium font-mono
 - **Month navigation:** Always a pill toggle `← Jun | Jul | Aug →` — never a dropdown, anywhere in the app
 - **Transaction type toggle:** Grey pill, "Expense" left / "Income" right, no default — user must explicitly select before submitting
 - **Feedback:** Passive and on-screen only — no modals for success, no toast spam; errors display inline
@@ -46,6 +52,8 @@ Single Next.js 15 monorepo — frontend and API logic co-located. Supabase handl
 ## Repository Etiquette
 
 - **Never commit directly to `main`** — always branch and PR
+- Config files, CLAUDE.md updates, and .claude/ changes 
+  may be committed directly to main
 - **Branch naming:** `feature/short-description` · `fix/short-description` · `chore/short-description`
 - **Commit style:** [Conventional Commits](https://www.conventionalcommits.org/)
   - `feat:` — new feature
@@ -55,7 +63,12 @@ Single Next.js 15 monorepo — frontend and API logic co-located. Supabase handl
   - `refactor:` — code change, no behavior change
   - `style:` — formatting / whitespace only
 - **Formatting:** Prettier + ESLint — run before committing
-- **PR conventions:** _TBD_
+- **PR conventions:** Branch naming: `feature/short-description`, `fix/short-description`, `chore/short-description`
+  One PR per feature or milestone — not per commit
+  PR title format: `[Feature] Add transaction form` / `[Fix] Delete button not firing` / `[Chore] Update deps`
+  No PR template required — solo project
+  Merge strategy: Squash and merge (keeps main history clean)
+  Vercel auto-deploys on merge to main — confirm preview deploy passes before merging
 
 ## Frequently Used Commands
 
