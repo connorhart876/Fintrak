@@ -10,6 +10,13 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Added `lib/supabase/client.ts` — browser client for Client Components (`createBrowserClient` from `@supabase/ssr`)
+- Added `lib/supabase/server.ts` — async server client for Server Components, Server Actions, and Route Handlers (async `cookies()`, `getAll`/`setAll` API)
+- Added `lib/supabase/middleware.ts` — session refresh helper + whitelist-public protected-route gate; unauthenticated requests redirect to `/login?next=<path>`
+- Added root `proxy.ts` — wires the session helper into Next.js 16 proxy (renamed from `middleware.ts` per Next.js 16 convention; public paths: `/login`, `/register`, `/auth/callback`)
+- Added `app/(auth)/layout.tsx` — centered auth shell (`max-w-sm`) shared by all auth pages
+- Added `app/(auth)/register/page.tsx` — registration page (Client Component) with react-hook-form + zod; inline field errors and form-level error display; redirects to `/login` on success
+- Added `app/(auth)/register/actions.ts` — `registerAction` Server Action wrapping `supabase.auth.signUp`; handles Supabase's duplicate-email silent-success pattern (empty `identities` array)
 - Scaffolded 18 GitHub issues covering the full MVP milestone in dependency order
 - Installed MVP npm dependencies: `@supabase/supabase-js`, `@supabase/ssr`, `@prisma/client`, `prisma`, `zod`, `react-hook-form`, `@hookform/resolvers`
 - Added `prisma:seed` npm script and `prisma.seed` config block to `package.json`

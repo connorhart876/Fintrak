@@ -29,7 +29,18 @@
       "Bash(npx shadcn@latest *)",
       "Bash(npx prisma *)",
       "Bash(Remove-Item *)",
-      "Bash(dir lib\\\\generated\\\\prisma *)"
+      "Bash(dir lib\\\\generated\\\\prisma *)",
+      "Bash(npx prettier *)",
+      "Bash(git pull *)",
+      "WebSearch",
+      "WebFetch(domain:supabase.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:medium.com)",
+      "WebFetch(domain:dev.to)",
+      "WebFetch(domain:www.prisma.io)",
+      "Bash(git --no-pager diff prisma/migrations/migration_lock.toml)",
+      "Bash(taskkill *)",
+      "PowerShell(Stop-Process *)"
     ]
   }
 }
