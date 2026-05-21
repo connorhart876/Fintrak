@@ -8,6 +8,7 @@ export default defineConfig({
   },
   migrations: {
     path: "prisma/migrations",
+    seed: "tsx prisma/seed.ts",
     // Runs against the temporary shadow database only — never the real Supabase
     // DB. Supabase provides the `auth` schema and `auth.uid()` in production;
     // the shadow DB is a plain Postgres, so we stub them here so migrations
