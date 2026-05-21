@@ -20,7 +20,16 @@
       "Bash(npm install *)",
       "Bash(npm run *)",
       "Bash(gh pr create --title '[Chore] Install MVP dependencies' --body ' *)",
-      "Bash(git stash *)"
+      "Bash(git stash *)",
+      "Bash(gh pr *)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_console_messages",
+      "mcp__playwright__browser_close",
+      "Bash(npx shadcn@latest *)",
+      "Bash(npx prisma *)",
+      "Bash(Remove-Item *)",
+      "Bash(dir lib\\\\generated\\\\prisma *)"
     ]
   }
 }
