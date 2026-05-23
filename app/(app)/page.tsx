@@ -1,4 +1,5 @@
 import { TransactionList } from "@/components/transaction-list";
+import { MonthlyTotals } from "@/components/monthly-totals";
 import { AddTransactionForm } from "@/components/transactions/add-transaction-form";
 import { createClient } from "@/lib/supabase/server";
 import { getDefaultCategories } from "@/lib/categories";
@@ -22,6 +23,7 @@ export default async function TransactionsPage() {
             Transactions
           </h1>
         </header>
+        <MonthlyTotals />
         <TransactionList />
       </section>
 
