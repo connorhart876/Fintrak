@@ -1,7 +1,18 @@
-import { Card } from "@/components/ui/card";
 import { TransactionList } from "@/components/transaction-list";
+import { AddTransactionForm } from "@/components/transactions/add-transaction-form";
+import { createClient } from "@/lib/supabase/server";
+import { getDefaultCategories } from "@/lib/categories";
 
-export default function TransactionsPage() {
+export default async function TransactionsPage() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  // middleware guarantees user is authenticated; null check satisfies TypeScript
+  if (!user) return null;
+
+  const categories = await getDefaultCategories(user.id);
+
   return (
     <div className="grid h-full grid-cols-[minmax(0,1fr)_24rem]">
       {/* Left: scrollable transaction list */}
@@ -21,9 +32,7 @@ export default function TransactionsPage() {
             Add transaction
           </h2>
         </header>
-        <Card className="flex flex-1 items-center justify-center border-dashed bg-transparent p-6 text-sm text-muted-foreground">
-          Add-transaction form lands in issue #15.
-        </Card>
+        <AddTransactionForm categories={categories} />
       </aside>
     </div>
   );
