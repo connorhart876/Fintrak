@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import { TransactionList } from "@/components/transaction-list";
 
 export default function TransactionsPage() {
   return (
@@ -10,9 +11,7 @@ export default function TransactionsPage() {
             Transactions
           </h1>
         </header>
-        <Card className="flex flex-1 items-center justify-center border-dashed bg-transparent text-sm text-muted-foreground">
-          Transaction list lands in issue #14.
-        </Card>
+        <TransactionList />
       </section>
 
       {/* Right: persistent add-transaction form panel */}
